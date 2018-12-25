@@ -1,0 +1,191 @@
+@import '../variables';
+
+:local {
+  .tourButton {
+    border: 0;
+    color: @btn-default-color-text;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    margin: 0;
+    outline: 0;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 20px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .tourButton::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  .greyTourButton {
+    background-image: linear-gradient(
+      -180deg,
+      @btn-default-bg-start,
+      @btn-default-bg-end
+    );
+    box-shadow: @btn-default-shadow;
+  }
+
+  .greyTourButton:hover {
+    background-image: linear-gradient(
+      -180deg,
+      @btn-default-hover-bg-start,
+      @btn-default-hover-bg-end
+    );
+    box-shadow: @btn-default-hover-shadow;
+  }
+
+  .greyTourButton:active {
+    background: @btn-default-active-bg;
+    box-shadow: @btn-default-active-shadow;
+  }
+
+  :global(.rt-ie8),
+  :global(.rt-ie9) {
+    .greyTourButton,
+    .greyTourButton:active,
+    .greyTourButton:hover,
+    .greyTourButton,
+    .greyTourButton:active,
+    .greyTourButton:hover {
+      background: @btn-default-bg;
+      box-shadow: none;
+      outline: @border-color-gray-dark solid 1px;
+    }
+  }
+  .blueTourButton {
+    background-image: linear-gradient(
+      -180deg,
+      @btn-primary-bg-start,
+      @btn-primary-bg-end
+    );
+    box-shadow: @btn-primary-shadow;
+    color: @btn-primary-color-text;
+  }
+
+  .blueTourButton:hover {
+    background-image: linear-gradient(
+      @btn-primary-hover-bg-start,
+      @btn-primary-hover-bg-end
+    );
+    box-shadow: @btn-primary-hover-shadow;
+  }
+
+  .blueTourButton:active {
+    background: @btn-primary-active-bg;
+    box-shadow: @btn-primary-active-shadow;
+  }
+
+  :global(.rt-ie8),
+  :global(.rt-ie9) {
+    .blueTourButton,
+    .blueTourButton:active,
+    .blueTourButton:hover,
+    .blueTourButton,
+    .blueTourButton:active,
+    .blueTourButton:hover {
+      background: @btn-primary-bg;
+      box-shadow: none;
+      outline: @btn-primary-bg solid 1px;
+    }
+  }
+
+  .tourButtonArrow::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transform: scaleX(0.6) rotate(45deg);
+    height: 29px;
+    width: 29px;
+    border: 0;
+  }
+
+  :global(.rt-ie8) .tourButtonArrow::after,
+  :global(.rt-ie9) .tourButtonArrow::after {
+    display: none;
+  }
+
+  .rightTourButtonArrow {
+    padding-right: 14px;
+  }
+
+  .leftTourButtonArrow {
+    padding-left: 14px;
+  }
+
+  :global(.rt-ie8) .leftTourButtonArrow,
+  :global(.rt-ie9) .leftTourButtonArrow {
+    padding-left: 20px !important;
+  }
+
+  :global(.rt-ie8) .rightTourButtonArrow,
+  :global(.rt-ie9) .rightTourButtonArrow {
+    padding-right: 20px !important;
+  }
+
+  .leftTourButtonArrow::after {
+    left: -15px;
+    top: 6px;
+  }
+
+  .rightTourButtonArrow::after {
+    right: -15px;
+    top: 6px;
+  }
+
+  .greyTourButton.leftTourButtonArrow::after {
+    background: linear-gradient(
+      135deg,
+      @btn-default-bg-start,
+      @btn-default-bg-end
+    );
+    border-bottom: @btn-default-arrow-border;
+    border-left: @btn-default-arrow-border;
+  }
+
+  .greyTourButton.leftTourButtonArrow:hover::after {
+    background: linear-gradient(
+      135deg,
+      @btn-default-hover-bg-start,
+      @btn-default-hover-bg-end
+    );
+  }
+
+  .greyTourButton.leftTourButtonArrow:active::after {
+    background: @btn-default-active-bg;
+  }
+
+  .blueTourButton.rightTourButtonArrow::after {
+    background: linear-gradient(
+      135deg,
+      @btn-primary-bg-start,
+      @btn-primary-bg-end
+    );
+    border-top: @btn-primary-arrow-border;
+    border-right: @btn-primary-arrow-border;
+  }
+
+  .blueTourButton.rightTourButtonArrow:hover::after {
+    background: linear-gradient(
+      135deg,
+      @btn-primary-hover-bg-start,
+      @btn-primary-hover-bg-end
+    );
+    border-top: @btn-primary-arrow-border;
+    border-right: @btn-primary-arrow-border;
+  }
+
+  .blueTourButton.rightTourButtonArrow:active::after {
+    background: @btn-primary-active-bg;
+  }
+}
