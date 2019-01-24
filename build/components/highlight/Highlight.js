@@ -9,12 +9,14 @@ function Highlight(props) {
     var highlightRoot = React.cloneElement(highlight, tslib_1.__assign({}, highlight.props, { style: tslib_1.__assign({}, highlight.props.style, { position: 'absolute', top: 0, left: 0, bottom: 0, right: 0 }) }));
     var width = pos.right - pos.left;
     var height = pos.bottom - pos.top;
+    var borderTopWidth = pos.top + document.documentElement.scrollTop;
+    var borderLeftWidth = pos.left + document.documentElement.scrollLeft;
     var computedStyles = {
         borderColor: color,
-        borderTopWidth: pos.top + document.documentElement.scrollTop,
-        borderLeftWidth: pos.left + document.documentElement.scrollLeft,
-        borderRightWidth: document.documentElement.offsetWidth - (pos.left + document.documentElement.scrollLeft) - width,
-        borderBottomWidth: document.documentElement.offsetHeight - (pos.top + document.documentElement.scrollTop) - height,
+        borderTopWidth: borderTopWidth,
+        borderLeftWidth: borderLeftWidth,
+        borderRightWidth: document.documentElement.offsetWidth - (borderLeftWidth + width),
+        borderBottomWidth: document.documentElement.offsetHeight - (borderTopWidth + height),
         width: width,
         height: height
     };
